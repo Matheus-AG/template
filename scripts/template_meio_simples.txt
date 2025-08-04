@@ -1,0 +1,3 @@
+Com base nesses critérios de inclusão para análise, considerando a produção enviada na competência $competencia de $ano, $plural_foi identificado$plural,
+$localidade, registro de $freq_total Autorizaç$plural_c de Internação Hospitalar (AIH) com procedimento$plural do$plural_agrupamento agrupamento$plural_agrupamento $agrupamento, 
+$procedimento ($codigo) em paciente$plural de $idade anos, o que suscita a necessidade de análise aprofundada por parte dessa Secretaria de Saúde.

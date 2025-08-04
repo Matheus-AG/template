@@ -8,6 +8,7 @@ import { Oficio } from './oficio/oficio.entity';
 import { AuthModule } from './auth/auth.module';
 import { DiretorModule } from './diretor/diretor.module';
 import { Diretor } from './diretor/diretor.entity';
+import { Procedimento } from './oficio/procedimento.entity';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { Diretor } from './diretor/diretor.entity';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [Usuario, Oficio, Diretor],
+      entities: [Usuario, Diretor, Oficio, Procedimento],
       synchronize: false,
     }),
     UsuarioModule,

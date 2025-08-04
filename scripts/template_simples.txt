@@ -1,0 +1,44 @@
+Ao Senhor
+Sicrano
+Secretário $ambito de Saúde de $municipio/ $uf
+endereco
+12345-678 - $municipio/$uf
+Assunto: Solicitação de esclarecimentos quanto à Produção Hospitalar de Média e Alta Complexidade, referentes aos
+procedimentos de Parto e Laqueadura, no ano de 2025 - Processo SEI nº 25000.XXXXXX/2025-XX.
+Senhor/a Secretário/a,
+Com os cordiais cumprimentos, informamos que uma das atribuições deste Departamento de Regulação Assistencial e Controle (DRAC) consiste
+no acompanhamento contínuo dos registros assistenciais inseridos nos sistemas de informação do Sistema Único de Saúde (SUS), com vistas ao
+controle, à avaliação e à qualificação das ações e serviços de saúde prestados à população. Tal atuação é essencial para subsidiar a tomada de
+decisões e assegurar a integridade e a fidedignidade das informações.
+No exercício de 2025, foi iniciada uma ação de controle primário, de caráter contínuo, com o objetivo de identificar eventuais situações que,
+porventura, possam configurar alguma distorção, relativa ao atributo idade, em procedimentos específicos dos agrupamentos parto e laqueadura,
+registrados e aprovados no Sistema de Informação Hospitalar (SIH/SUS). Essa identificação objetiva a qualificação das informações assistenciais
+contidas na base nacional do SIH/SUS.
+Com o propósito de selecionar situações específicas para análise mais aprofundada, foram definidos os seguintes critérios para detecção de
+possíveis impropriedades nos registros desses procedimentos:
+Parto e Intercorrências relacionadas: Levando-se em consideração o atributo idade, conforme estabelecido na Tabela de
+Procedimentos, Medicamentos e O P M do SUS, serão selecionados como objeto de análise aprofundada os registros de
+procedimentos realizados em usuárias/os com idade inferior a 9 anos ou superior a 60 anos;
+L aqueadura: Levando-se em consideração o atributo idade, conforme estabelecido na Tabela de Procedimentos, Medicamentos e
+O P M do SUS, serão selecionados como objeto de análise aprofundada os registros de procedimentos em usuárias/os com idade
+inferior a 21 anos ou superior a 60 anos.
+Com base nesses critérios de inclusão para análise, considerando a produção enviada no primeiro trimestre de 2025, foi/ram identificado/s, no  
+município de $municipio/$uf, registro de $numero Autorização de Internação Hospitalar (AIH) comprocedimento do agrupamento "$agrupamento", 
+$procedimento ($codigo) em paciente de $idade anos, o que suscita a necessidade de análise aprofundada por
+parte dessa Secretaria de Saúde.
+
+Dessa forma, solicitamos que essa Secretaria se manifeste quanto ao caso identificado, encaminhando esclarecimentos que possibilitem a devida
+compreensão do contexto e da natureza da situação identificada, encaminhando documentação comprobatória, quando necessário. Ressaltamos
+que tal elucidação é fundamental para a manutenção da qualidade e da consistência dos dados que embasam as análises de saúde, planejamento,
+pesquisa, financiamento e as tomadas de decisões no âmbito da saúde pública.
+Caso seja identificada a necessidade de correção dos dados registrados na base nacional, orientamos providências no sentido de
+reprocessamento dos mesmos conforme preconizado pela Portaria SAES/MS n.º 1.110, de 11 de novembro de 2021, observando que a
+contagem do período máximo para o reprocessamento é de até 6 competências anteriores à competência atual de processamento. Encaminhamos
+em anexo o detalhamento do fluxo de reprocessamento SIH e SIA.
+Solicitamos, portanto, manifestação no prazo de até 15 (quinze) dias, contados a partir do recebimento deste Ofício, com referência ao
+Processo SEI nº 25000.XXXXXX/2025-XX.
+A Coordenação-Geral de Gestão de Sistemas de Informação em Saúde - CGSI, deste Departamento, encontra-se à disposição para esclarecer
+eventuais dúvidas, através do e-mail: ncav.cgsi@saude.gov.br.
+Atenciosamente,
+CARLOS AMILCAR SALGADO
+Diretor

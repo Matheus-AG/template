@@ -1,8 +1,9 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Procedimento } from './procedimento.entity';
 
 @Entity()
 export class Oficio {
-  @PrimaryColumn({ generated: 'increment' })
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column()
@@ -11,18 +12,19 @@ export class Oficio {
   @Column()
   competencia: number;
 
-  @Column()
+  @Column({ nullable: true, default: null })
   nome_secretario: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, default: null, length: 1 })
   sexo_secretario: string;
 
-  @Column({ nullable: true })
+  @Column()
   ambito: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, default: null })
   endereco: string;
-  @Column({ nullable: true })
+
+  @Column({ nullable: true, default: null, length: 8 })
   cep: string;
 
   @Column()
@@ -31,12 +33,18 @@ export class Oficio {
   @Column()
   uf: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, default: null })
   processo: string;
 
-  @Column({ nullable: true })
+  @Column()
   nome_diretor: string;
 
-  @Column()
+  @Column({ length: 1 })
   sexo_diretor: string;
+
+  @Column({ length: 1, default: null })
+  andamento: string;
+
+  @OneToMany(() => Procedimento, (procedimento) => procedimento.oficio, {eager:true, cascade:true})
+  procedimentos: Procedimento[];
 }

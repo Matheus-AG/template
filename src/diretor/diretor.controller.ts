@@ -10,11 +10,11 @@ export class DiretorController {
     return await this.diretorService.obterTodos();
   }
   @Get()
-  async obterAtual(){
-    return await this.diretorService.obterAtual()
+  async obterAtual() {
+    return await this.diretorService.obterAtual();
   }
   @Post()
-  async criar(criarDiretorDto: CriarDiretorDto){
-    return await this.diretorService.criar(criarDiretorDto)
+  async criar(criarDiretorDto: CriarDiretorDto) {
+    return await this.diretorService.criar(criarDiretorDto);
   }
 }

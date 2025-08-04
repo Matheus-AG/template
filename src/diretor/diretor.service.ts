@@ -18,8 +18,8 @@ export class DiretorService {
       order: { id: 'DESC' },
     });
   }
-  async criar(criarDiretorDto:CriarDiretorDto){
-    const diretor = this.diretorRepository.create(criarDiretorDto)
-    return await this.diretorRepository.save(diretor)
+  async criar(criarDiretorDto: CriarDiretorDto) {
+    const diretor = this.diretorRepository.create(criarDiretorDto);
+    return await this.diretorRepository.save(diretor);
   }
 }

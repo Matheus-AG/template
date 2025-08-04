@@ -1,0 +1,164 @@
+{
+  "AC": {
+    "cidade": "Rio Branco",
+    "estado": "Acre",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "AL": {
+    "cidade": "Maceió",
+    "estado": "Alagoas",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "AP": {
+    "cidade": "Macapá",
+    "estado": "Amapá",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "AM": {
+    "cidade": "Manaus",
+    "estado": "Amazonas",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "BA": {
+    "cidade": "Salvador",
+    "estado": "Bahia",
+    "preposicao": "na",
+    "preposicao_do": "da"
+  },
+  "CE": {
+    "cidade": "Fortaleza",
+    "estado": "Ceará",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "DF": {
+    "cidade": "Brasília",
+    "estado": "Distrito Federal",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "ES": {
+    "cidade": "Vitória",
+    "estado": "Espírito Santo",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "GO": {
+    "cidade": "Goiânia",
+    "estado": "Goiás",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "MA": {
+    "cidade": "São Luís",
+    "estado": "Maranhão",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "MT": {
+    "cidade": "Cuiabá",
+    "estado": "Mato Grosso",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "MS": {
+    "cidade": "Campo Grande",
+    "estado": "Mato Grosso do Sul",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "MG": {
+    "cidade": "Belo Horizonte",
+    "estado": "Minas Gerais",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "PA": {
+    "cidade": "Belém",
+    "estado": "Pará",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "PB": {
+    "cidade": "João Pessoa",
+    "estado": "Paraíba",
+    "preposicao": "na",
+    "preposicao_do": "da"
+  },
+  "PR": {
+    "cidade": "Curitiba",
+    "estado": "Paraná",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "PE": {
+    "cidade": "Recife",
+    "estado": "Pernambuco",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "PI": {
+    "cidade": "Teresina",
+    "estado": "Piauí",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "RJ": {
+    "cidade": "Rio de Janeiro",
+    "estado": "Rio de Janeiro",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "RN": {
+    "cidade": "Natal",
+    "estado": "Rio Grande do Norte",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "RS": {
+    "cidade": "Porto Alegre",
+    "estado": "Rio Grande do Sul",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  },
+  "RO": {
+    "cidade": "Porto Velho",
+    "estado": "Rondônia",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "RR": {
+    "cidade": "Boa Vista",
+    "estado": "Roraima",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "SC": {
+    "cidade": "Florianópolis",
+    "estado": "Santa Catarina",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "SP": {
+    "cidade": "São Paulo",
+    "estado": "São Paulo",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "SE": {
+    "cidade": "Aracaju",
+    "estado": "Sergipe",
+    "preposicao": "em",
+    "preposicao_do": "de"
+  },
+  "TO": {
+    "cidade": "Palmas",
+    "estado": "Tocantins",
+    "preposicao": "no",
+    "preposicao_do": "do"
+  }
+}

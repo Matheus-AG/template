@@ -30,6 +30,15 @@
 ```bash
 $ npm install
 ```
+## Enviroment
+```bash
+DB_HOST="HOST"
+DB_PORT="PORT"
+DB_USERNAME="USERNAME"
+DB_PASSWORD="PASSWORD"
+DB_NAME="NAME"
+JWT_SECRET="SECRET"
+```
 
 ## Compile and run the project
 
