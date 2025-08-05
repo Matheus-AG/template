@@ -1,14 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { exec } from 'child_process';
 import { Oficio } from './oficio.entity';
 import { Procedimento } from './procedimento.entity';
 import * as fs from 'fs';
+import { AlterarOficioDto } from 'src/dto/oficio/alterarOficio.dto';
+import { DiretorService } from 'src/diretor/diretor.service';
 
 @Injectable()
 export class OficioService {
   constructor(
+    private diretorService: DiretorService,
     @InjectRepository(Oficio)
     private readonly oficioRepository: Repository<Oficio>,
 
@@ -27,7 +30,10 @@ export class OficioService {
         console.error(`Erro ao executar script: ${error.message}`);
         return;
       }
-
+      const diretor = await this.diretorService.obterAtual();
+      if (!diretor) {
+        throw new NotFoundException('Nenhum diretor registrado.');
+      }
       try {
         const dados = JSON.parse(stdout);
 
@@ -45,11 +51,8 @@ export class OficioService {
           const oficio = this.oficioRepository.create({
             ano: 2025,
             competencia: 4,
-            nome_secretario: 'CBA',
-            sexo_secretario: 'H',
-            nome_diretor: 'ABC',
-            sexo_diretor: 'M',
-            andamento: 'A preencher',
+            nome_diretor: diretor.nome,
+            sexo_diretor: diretor.sexo,
             ...element,
             procedimentos,
           });
@@ -58,8 +61,20 @@ export class OficioService {
         }
         fs.unlink(file.path, () => {});
       } catch (parseError) {
-        console.error('Erro ao parsear o JSON retornado pelo script:', parseError);
+        console.error(
+          'Erro ao parsear o JSON retornado pelo script:',
+          parseError,
+        );
       }
     });
+  }
+  async alterar(alterarOficioDto: AlterarOficioDto) {
+    const oficioExiste = await this.oficioRepository.findOne({
+      where: { id: alterarOficioDto.id },
+    });
+    if (!oficioExiste) {
+      throw new NotFoundException('Oficio não encontrado');
+    }
+    return this.oficioRepository.save(alterarOficioDto);
   }
 }

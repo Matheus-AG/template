@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  AfterUpdate,
+} from 'typeorm';
 import { Procedimento } from './procedimento.entity';
 
 @Entity()
@@ -39,12 +45,22 @@ export class Oficio {
   @Column()
   nome_diretor: string;
 
-  @Column({ length: 1 })
+  @Column()
   sexo_diretor: string;
 
-  @Column({ length: 1, default: null })
-  andamento: string;
+  @Column({ type: 'tinyint', unsigned: true, default: 0 })
+  andamento: number;
 
-  @OneToMany(() => Procedimento, (procedimento) => procedimento.oficio, {eager:true, cascade:true})
+  @OneToMany(() => Procedimento, (procedimento) => procedimento.oficio, {
+    eager: true,
+    cascade: true,
+  })
   procedimentos: Procedimento[];
+
+  @AfterUpdate()
+  oficioPreenchido() {
+    if (Object.values(this).every((e) => e !== null)) {
+      this.andamento = 1;
+    }
+  }
 }

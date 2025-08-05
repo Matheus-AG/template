@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Usuario {
-  @PrimaryColumn()
+  @PrimaryColumn({ nullable: false, default: null })
   cpf: string;
 
   @Column()

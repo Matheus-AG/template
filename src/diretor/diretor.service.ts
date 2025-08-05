@@ -14,12 +14,15 @@ export class DiretorService {
     return await this.diretorRepository.find();
   }
   async obterAtual() {
-    return await this.diretorRepository.findOne({
-      order: { id: 'DESC' },
-    });
+    return (
+      await this.diretorRepository.find({
+        order: { id: 'DESC' },
+        take: 1,
+      })
+    )[0];
   }
   async criar(criarDiretorDto: CriarDiretorDto) {
-    const diretor = this.diretorRepository.create(criarDiretorDto);
+    const diretor = await this.diretorRepository.create(criarDiretorDto);
     return await this.diretorRepository.save(diretor);
   }
 }

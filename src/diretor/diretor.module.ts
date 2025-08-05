@@ -8,5 +8,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [TypeOrmModule.forFeature([Diretor])],
   controllers: [DiretorController],
   providers: [DiretorService],
+  exports: [DiretorService],
 })
 export class DiretorModule {}

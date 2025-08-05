@@ -4,9 +4,10 @@ import { OficioService } from './oficio.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Oficio } from './oficio.entity';
 import { Procedimento } from './procedimento.entity';
+import { DiretorModule } from 'src/diretor/diretor.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Oficio, Procedimento])],
+  imports: [TypeOrmModule.forFeature([Oficio, Procedimento]), DiretorModule],
   controllers: [OficioController],
   providers: [OficioService],
 })

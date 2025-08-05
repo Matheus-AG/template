@@ -42,21 +42,19 @@ export class UsuarioService {
     const usuarioExiste = await this.usuarioRepository.findOne({
       where: { cpf: alterarUsuarioDto.cpf },
     });
-    if (usuarioExiste) {
-      const usuario = this.usuarioRepository.create(alterarUsuarioDto);
-      return await this.usuarioRepository.save(usuario);
-    } else {
+    if (!usuarioExiste) {
       throw new NotFoundException('CPF não cadastrado');
     }
+    const usuario = this.usuarioRepository.create(alterarUsuarioDto);
+    return await this.usuarioRepository.save(usuario);
   }
   async remover(cpf: string) {
     const usuarioExiste = await this.usuarioRepository.findOne({
       where: { cpf },
     });
-    if (usuarioExiste) {
-      return await this.usuarioRepository.delete({ cpf });
-    } else {
+    if (!usuarioExiste) {
       throw new NotFoundException('CPF não cadastrado');
     }
+    return await this.usuarioRepository.delete({ cpf });
   }
 }

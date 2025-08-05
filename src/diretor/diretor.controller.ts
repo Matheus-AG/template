@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { DiretorService } from './diretor.service';
 import { CriarDiretorDto } from 'src/dto/diretor/criarDiretor.dto';
 
@@ -9,12 +9,12 @@ export class DiretorController {
   async obterTodos() {
     return await this.diretorService.obterTodos();
   }
-  @Get()
+  @Get('atual')
   async obterAtual() {
     return await this.diretorService.obterAtual();
   }
   @Post()
-  async criar(criarDiretorDto: CriarDiretorDto) {
+  async criar(@Body() criarDiretorDto: CriarDiretorDto) {
     return await this.diretorService.criar(criarDiretorDto);
   }
 }

@@ -1,6 +1,8 @@
 import {
+  Body,
   Controller,
   Get,
+  Patch,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -8,6 +10,7 @@ import {
 import { OficioService } from './oficio.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
+import { AlterarOficioDto } from 'src/dto/oficio/alterarOficio.dto';
 
 @Controller('oficio')
 export class OficioController {
@@ -32,5 +35,10 @@ export class OficioController {
   )
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     return this.oficioService.criarOficios(file);
+  }
+
+  @Patch()
+  async alterar(@Body() alterarOficioDto: AlterarOficioDto) {
+    return await this.oficioService.alterar(alterarOficioDto);
   }
 }

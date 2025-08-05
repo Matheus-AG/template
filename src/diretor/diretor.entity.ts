@@ -1,13 +1,13 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Diretor {
-  @PrimaryColumn({ generated: 'increment' })
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
 
   @Column()
   nome: string;
 
-  @Column({ type: 'char' })
+  @Column()
   sexo: string;
 }
