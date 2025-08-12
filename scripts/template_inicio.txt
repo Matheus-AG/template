@@ -3,22 +3,10 @@ $nome
 Secretári$genero $ambito_adjetivo de Saúde $local
 $endereco
 $cep - $municipio/$uf
-Assunto: Solicitação de esclarecimentos quanto à Produção Hospitalar de Média e Alta Complexidade, referentes aos
-procedimentos de Parto e Laqueadura, no ano de $ano - Processo SEI nº $processo.
+Assunto: Solicitação de esclarecimentos quanto à Produção Hospitalar de Média e Alta Complexidade, referentes aos procedimentos de Parto e Laqueadura, no ano de $ano - Processo SEI nº $processo.
 $tratamento Secretári$genero,
-Com os cordiais cumprimentos, informamos que uma das atribuições deste Departamento de Regulação Assistencial e Controle (DRAC) consiste
-no acompanhamento contínuo dos registros assistenciais inseridos nos sistemas de informação do Sistema Único de Saúde (SUS), com vistas ao
-controle, à avaliação e à qualificação das ações e serviços de saúde prestados à população. Tal atuação é essencial para subsidiar a tomada de
-decisões e assegurar a integridade e a fidedignidade das informações.
-No exercício de 2025, foi iniciada uma ação de controle primário, de caráter contínuo, com o objetivo de identificar eventuais situações que,
-porventura, possam configurar alguma distorção, relativa ao atributo idade, em procedimentos específicos dos agrupamentos parto e laqueadura,
-registrados e aprovados no Sistema de Informação Hospitalar (SIH/SUS). Essa identificação objetiva a qualificação das informações assistenciais
-contidas na base nacional do SIH/SUS.
-Com o propósito de selecionar situações específicas para análise mais aprofundada, foram definidos os seguintes critérios para detecção de
-possíveis impropriedades nos registros desses procedimentos:
-Parto e Intercorrências relacionadas: Levando-se em consideração o atributo idade, conforme estabelecido na Tabela de
-Procedimentos, Medicamentos e OPM do SUS, serão selecionados como objeto de análise aprofundada os registros de
-procedimentos realizados em usuárias/os com idade inferior a 9 anos ou superior a 60 anos;
-Laqueadura: Levando-se em consideração o atributo idade, conforme estabelecido na Tabela de Procedimentos, Medicamentos e
-OPM do SUS, serão selecionados como objeto de análise aprofundada os registros de procedimentos em usuárias/os com idade
-inferior a 21 anos ou superior a 60 anos.
+Com os cordiais cumprimentos, informamos que uma das atribuições deste Departamento de Regulação Assistencial e Controle (DRAC) consiste no acompanhamento contínuo dos registros assistenciais inseridos nos sistemas de informação do Sistema Único de Saúde (SUS), com vistas ao controle, à avaliação e à qualificação das ações e serviços de saúde prestados à população. Tal atuação é essencial para subsidiar a tomada de decisões e assegurar a integridade e a fidedignidade das informações.
+No exercício de 2025, foi iniciada uma ação de controle primário, de caráter contínuo, com o objetivo de identificar eventuais situações que, porventura, possam configurar alguma distorção, relativa ao atributo idade, em procedimentos específicos dos agrupamentos parto e laqueadura, registrados e aprovados no Sistema de Informação Hospitalar (SIH/SUS). Essa identificação objetiva a qualificação das informações assistenciais contidas na base nacional do SIH/SUS.
+Com o propósito de selecionar situações específicas para análise mais aprofundada, foram definidos os seguintes critérios para detecção de possíveis impropriedades nos registros desses procedimentos:
+Parto e Intercorrências relacionadas: Levando-se em consideração o atributo idade, conforme estabelecido na Tabela de Procedimentos, Medicamentos e OPM do SUS, serão selecionados como objeto de análise aprofundada os registros de procedimentos realizados em usuárias/os com idade inferior a 9 anos ou superior a 60 anos;
+Laqueadura: Levando-se em consideração o atributo idade, conforme estabelecido na Tabela de Procedimentos, Medicamentos e OPM do SUS, serão selecionados como objeto de análise aprofundada os registros de procedimentos em usuárias/os com idade inferior a 21 anos ou superior a 60 anos.

@@ -2,8 +2,11 @@ import {
   Body,
   Controller,
   Get,
+  Param,
   Patch,
   Post,
+  Res,
+  StreamableFile,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
@@ -15,6 +18,11 @@ import { AlterarOficioDto } from 'src/dto/oficio/alterarOficio.dto';
 @Controller('oficio')
 export class OficioController {
   constructor(private oficioService: OficioService) {}
+  @Get('gerar/:id')
+  async obterOficio(@Param('id') id: number) {
+    return await this.oficioService.gerarOficio(id)
+  }
+
   @Get()
   async obterTodos() {
     return await this.oficioService.obterTodos();

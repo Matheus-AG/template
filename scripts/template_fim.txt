@@ -1,15 +1,7 @@
-Dessa forma, solicitamos que essa Secretaria se manifeste quanto ao caso identificado, encaminhando esclarecimentos que possibilitem a devida
-compreensão do contexto e da natureza da situação identificada, encaminhando documentação comprobatória, quando necessário. Ressaltamos
-que tal elucidação é fundamental para a manutenção da qualidade e da consistência dos dados que embasam as análises de saúde, planejamento,
-pesquisa, financiamento e as tomadas de decisões no âmbito da saúde pública.
-Caso seja identificada a necessidade de correção dos dados registrados na base nacional, orientamos providências no sentido de
-reprocessamento dos mesmos conforme preconizado pela Portaria SAES/MS n.º 1.110, de 11 de novembro de 2021, observando que a
-contagem do período máximo para o reprocessamento é de até 6 competências anteriores à competência atual de processamento. Encaminhamos
-em anexo o detalhamento do fluxo de reprocessamento SIH e SIA.
-Solicitamos, portanto, manifestação no prazo de até 15 (quinze) dias, contados a partir do recebimento deste Ofício, com referência ao
-Processo SEI nº $processo.
-A Coordenação-Geral de Gestão de Sistemas de Informação em Saúde - CGSI, deste Departamento, encontra-se à disposição para esclarecer
-eventuais dúvidas, através do e-mail: ncav.cgsi@saude.gov.br.
+Dessa forma, solicitamos que essa Secretaria se manifeste quanto ao caso identificado, encaminhando esclarecimentos que possibilitem a devida compreensão do contexto e da natureza da situação identificada, encaminhando documentação comprobatória, quando necessário. Ressaltamos que tal elucidação é fundamental para a manutenção da qualidade e da consistência dos dados que embasam as análises de saúde, planejamento, pesquisa, financiamento e as tomadas de decisões no âmbito da saúde pública.
+Caso seja identificada a necessidade de correção dos dados registrados na base nacional, orientamos providências no sentido de reprocessamento dos mesmos conforme preconizado pela Portaria SAES/MS n.º 1.110, de 11 de novembro de 2021, observando que a contagem do período máximo para o reprocessamento é de até 6 competências anteriores à competência atual de processamento. Encaminhamos em anexo o detalhamento do fluxo de reprocessamento SIH e SIA.
+Solicitamos, portanto, manifestação no prazo de até 15 (quinze) dias, contados a partir do recebimento deste Ofício, com referência ao Processo SEI nº $processo.
+A Coordenação-Geral de Gestão de Sistemas de Informação em Saúde - CGSI, deste Departamento, encontra-se à disposição para esclarecer eventuais dúvidas, através do e-mail: ncav.cgsi@saude.gov.br.
 Atenciosamente,
 $nome_diretor
 Diretor$genero_diretor

@@ -1,7 +1,12 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { exec } from 'child_process';
+import { exec, spawn, } from 'child_process';
 import { Oficio } from './oficio.entity';
 import { Procedimento } from './procedimento.entity';
 import * as fs from 'fs';
@@ -20,19 +25,57 @@ export class OficioService {
   ) {}
 
   async obterTodos() {
-    return await this.oficioRepository.find();
+    return await this.oficioRepository.find({ order: { id: 'ASC' } });
   }
 
+async gerarOficio(id: number) {
+  const oficio = await this.oficioRepository.findOne({ where: { id } });
+
+  if (!oficio) {
+    throw new NotFoundException('Ofício não encontrado');
+  }
+
+  if (oficio.andamento === 0) {
+    throw new ConflictException('Preenchimento está pendente');
+  }
+
+  const nomeArquivo = `oficio_${oficio.id}.txt`;
+
+  await fs.writeFileSync(nomeArquivo, JSON.stringify(oficio));
+
+  const execCommand = (cmd: string) =>
+    new Promise<string>((resolve, reject) => {
+      
+      exec(cmd, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Erro ao executar script: ${error.message}`);
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(`Stderr do script: ${stderr}`);
+        }
+        resolve(stdout);
+      });
+    });
+
+  await execCommand(`py scripts/gerar_oficio.py ${nomeArquivo}`);
+
+  const texto = await fs.readFileSync(nomeArquivo).toString();
+  fs.unlink(nomeArquivo,()=>{})
+
+  return texto;
+}
   async criarOficios(file: Express.Multer.File) {
-    const cmd = 'py scripts/script.py ' + file.path;
+    const diretor = await this.diretorService.obterAtual();
+      if (!diretor) {
+        throw new NotFoundException('Nenhum diretor registrado.');
+      }
+    const cmd = 'py scripts/processar_dados.py ' + file.path;
     exec(cmd, async (error, stdout, stderr) => {
       if (error) {
         console.error(`Erro ao executar script: ${error.message}`);
         return;
-      }
-      const diretor = await this.diretorService.obterAtual();
-      if (!diretor) {
-        throw new NotFoundException('Nenhum diretor registrado.');
       }
       try {
         const dados = JSON.parse(stdout);
@@ -69,12 +112,14 @@ export class OficioService {
     });
   }
   async alterar(alterarOficioDto: AlterarOficioDto) {
-    const oficioExiste = await this.oficioRepository.findOne({
+    const oficio= await this.oficioRepository.findOne({
       where: { id: alterarOficioDto.id },
     });
-    if (!oficioExiste) {
+    if (!oficio) {
       throw new NotFoundException('Oficio não encontrado');
     }
-    return this.oficioRepository.save(alterarOficioDto);
+    return this.oficioRepository.save(
+      this.oficioRepository.create({...oficio,...alterarOficioDto}),
+    );
   }
 }

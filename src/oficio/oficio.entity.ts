@@ -3,7 +3,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToMany,
-  AfterUpdate,
+  BeforeUpdate,
 } from 'typeorm';
 import { Procedimento } from './procedimento.entity';
 
@@ -48,7 +48,7 @@ export class Oficio {
   @Column()
   sexo_diretor: string;
 
-  @Column({ type: 'tinyint', unsigned: true, default: 0 })
+  @Column({unsigned: true, default: 0 })
   andamento: number;
 
   @OneToMany(() => Procedimento, (procedimento) => procedimento.oficio, {
@@ -57,9 +57,9 @@ export class Oficio {
   })
   procedimentos: Procedimento[];
 
-  @AfterUpdate()
+  @BeforeUpdate()
   oficioPreenchido() {
-    if (Object.values(this).every((e) => e !== null)) {
+    if (Object.values(this).every((e) => e !== null) && this.andamento === 0) {
       this.andamento = 1;
     }
   }
