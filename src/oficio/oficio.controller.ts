@@ -20,7 +20,7 @@ export class OficioController {
   constructor(private oficioService: OficioService) {}
   @Get('gerar/:id')
   async obterOficio(@Param('id') id: number) {
-    return await this.oficioService.gerarOficio(id)
+    return await this.oficioService.gerarOficio(id);
   }
 
   @Get()

@@ -4,8 +4,10 @@ import {
   PrimaryGeneratedColumn,
   OneToMany,
   BeforeUpdate,
+  ManyToOne,
 } from 'typeorm';
 import { Procedimento } from './procedimento.entity';
+import { Usuario } from 'src/usuario/usuario.entity';
 
 @Entity()
 export class Oficio {
@@ -48,7 +50,7 @@ export class Oficio {
   @Column()
   sexo_diretor: string;
 
-  @Column({unsigned: true, default: 0 })
+  @Column({ unsigned: true, default: 0 })
   andamento: number;
 
   @OneToMany(() => Procedimento, (procedimento) => procedimento.oficio, {
@@ -56,6 +58,9 @@ export class Oficio {
     cascade: true,
   })
   procedimentos: Procedimento[];
+
+  @ManyToOne(() => Usuario, (usuario) => usuario.oficios, { eager: true })
+  usuario: Usuario;
 
   @BeforeUpdate()
   oficioPreenchido() {

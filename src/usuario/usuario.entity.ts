@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Oficio } from 'src/oficio/oficio.entity';
+import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class Usuario {
@@ -10,4 +11,12 @@ export class Usuario {
 
   @Column()
   senha: string;
+
+  @Column({ default: false })
+  disponibilidade: boolean;
+
+  @OneToMany(() => Oficio, (oficio) => oficio.usuario, {
+    cascade: true,
+  })
+  oficios: Oficio[];
 }

@@ -11,9 +11,9 @@ def nome_municipio(municipio):
 def gerar_oficio(ano, competencia,nome, sexo, ambito, endereco, cep, municipio, uf, processo, procedimentos,nome_diretor,genero_diretor,id):
 
     #gera as informações necessárias para o oficio
-    genero = 'a' if sexo == 'M' else 'o'
-    tratamento = 'Senhora' if sexo == 'M' else 'Senhor'
-    preposicao = 'À' if sexo == 'M' else 'Ao'
+    genero = 'a' if sexo == 'F' else 'o'
+    tratamento = 'Senhora' if sexo == 'F' else 'Senhor'
+    preposicao = 'À' if sexo == 'F' else 'Ao'
     ambito_adjetivo = 'Municipal' if ambito == 'M' else 'Estadual'
     ambito_subjetivo = 'Município' if ambito == 'M' else 'Estado'
     municipio = nome_municipio(municipio)
@@ -23,7 +23,7 @@ def gerar_oficio(ano, competencia,nome, sexo, ambito, endereco, cep, municipio, 
     plural_foi = 'foram' if freq_total > 1 else 'foi'
     plural_agrupamento = 's' if len(set(procedimento['agrupamento'] for procedimento in procedimentos)) > 1 else ''
     agrupamento = ' e '.join(set(procedimento['agrupamento'] for procedimento in procedimentos)).lower()
-    genero_diretor = 'a' if genero_diretor == 'M' else ''
+    genero_diretor = 'a' if genero_diretor == 'F' else ''
     with open('capitais.json', 'r', encoding='utf-8') as file:
         capitais = json.load(file)
         local = f'de {municipio}/{uf}' if ambito == 'M' else f'{capitais[uf]['preposicao_do']} {capitais[uf]['estado']}'
