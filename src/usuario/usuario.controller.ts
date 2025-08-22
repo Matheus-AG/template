@@ -12,6 +12,7 @@ import { UsuarioService } from './usuario.service';
 import { CriarUsuarioDto } from 'src/dto/usuario/criarUsuario.dto';
 import { AlterarUsuarioDto } from 'src/dto/usuario/alterarUsuario.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { UsuarioCPF } from 'src/decorators/cpf.decorator';
 
 @Controller('usuario')
 export class UsuarioController {
@@ -21,6 +22,11 @@ export class UsuarioController {
   async obterTodos() {
     return await this.usuarioService.obterTodos();
   }
+  @UseGuards(AuthGuard)
+      @Get('eu')
+      async obterProprio(@UsuarioCPF() cpf: string) {
+        return await this.usuarioService.obter(cpf);
+      }
   @UseGuards(AuthGuard)
   @Get(':cpf')
   async obter(@Param('cpf') cpf: string) {

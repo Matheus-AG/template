@@ -1,3 +1,4 @@
+import { Exclude } from 'class-transformer';
 import { Oficio } from 'src/oficio/oficio.entity';
 import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 
@@ -9,7 +10,8 @@ export class Usuario {
   @Column()
   nome: string;
 
-  @Column()
+  @Column({select:false})
+  @Exclude()
   senha: string;
 
   @Column({ default: false })

@@ -12,7 +12,7 @@ export class AuthService {
   ) {}
 
   async entrar(entrarDto: EntrarDto) {
-    const usuario = await this.usuarioService.obter(entrarDto.cpf);
+    const usuario = await this.usuarioService.obterAuth(entrarDto.cpf);
     if (!(usuario && bcrypt.compareSync(entrarDto.senha, usuario.senha))) {
       throw new UnauthorizedException();
     }

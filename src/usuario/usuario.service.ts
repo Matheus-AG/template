@@ -40,6 +40,9 @@ export class UsuarioService implements OnModuleInit {
   async obter(cpf: string) {
     return await this.usuarioRepository.findOne({ where: { cpf } });
   }
+  async obterAuth(cpf: string) {
+    return await this.usuarioRepository.findOne({ where: { cpf } ,select:{cpf:true, senha:true,nome:true}});
+  }
 
   async criar(criarUsuarioDto: CriarUsuarioDto) {
     console.log(criarUsuarioDto);
