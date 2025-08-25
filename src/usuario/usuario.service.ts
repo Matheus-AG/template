@@ -41,11 +41,13 @@ export class UsuarioService implements OnModuleInit {
     return await this.usuarioRepository.findOne({ where: { cpf } });
   }
   async obterAuth(cpf: string) {
-    return await this.usuarioRepository.findOne({ where: { cpf } ,select:{cpf:true, senha:true,nome:true}});
+    return await this.usuarioRepository.findOne({
+      where: { cpf },
+      select: { cpf: true, senha: true, nome: true },
+    });
   }
 
   async criar(criarUsuarioDto: CriarUsuarioDto) {
-    console.log(criarUsuarioDto);
     const usuarioExiste = await this.usuarioRepository.findOne({
       where: { cpf: criarUsuarioDto.cpf },
     });
@@ -57,7 +59,8 @@ export class UsuarioService implements OnModuleInit {
         ...criarUsuarioDto,
         senha,
       });
-      return await this.usuarioRepository.save(usuario);
+      await this.usuarioRepository.save(usuario);
+      return await this.obter(criarUsuarioDto.cpf);
     }
   }
   async alterar(alterarUsuarioDto: AlterarUsuarioDto) {
@@ -88,9 +91,7 @@ export class UsuarioService implements OnModuleInit {
       await this.rebalancearOficios(usuarioAtualizado.cpf);
     }
 
-    return await this.usuarioRepository.findOne({
-      where: { cpf: alterarUsuarioDto.cpf },
-    });
+    return await this.obter(alterarUsuarioDto.cpf);
   }
 
   async rebalancearOficios(cpf: string) {
@@ -147,6 +148,6 @@ export class UsuarioService implements OnModuleInit {
     if (!usuarioExiste) {
       throw new NotFoundException('CPF não cadastrado');
     }
-    return await this.usuarioRepository.delete({ cpf });
+    await this.usuarioRepository.delete({ cpf });
   }
 }

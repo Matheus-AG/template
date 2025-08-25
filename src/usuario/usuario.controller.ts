@@ -23,16 +23,16 @@ export class UsuarioController {
     return await this.usuarioService.obterTodos();
   }
   @UseGuards(AuthGuard)
-      @Get('eu')
-      async obterProprio(@UsuarioCPF() cpf: string) {
-        return await this.usuarioService.obter(cpf);
-      }
+  @Get('eu')
+  async obterProprio(@UsuarioCPF() cpf: string) {
+    return await this.usuarioService.obter(cpf);
+  }
   @UseGuards(AuthGuard)
   @Get(':cpf')
   async obter(@Param('cpf') cpf: string) {
     return await this.usuarioService.obter(cpf);
   }
-
+  @UseGuards(AuthGuard)
   @Post()
   async criar(@Body() criarUsuarioDto: CriarUsuarioDto) {
     return await this.usuarioService.criar(criarUsuarioDto);
