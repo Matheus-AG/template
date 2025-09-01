@@ -148,6 +148,7 @@ export class UsuarioService implements OnModuleInit {
     if (!usuarioExiste) {
       throw new NotFoundException('CPF não cadastrado');
     }
+    await this.alterar({cpf,disponibilidade:false})
     await this.usuarioRepository.delete({ cpf });
   }
 }
